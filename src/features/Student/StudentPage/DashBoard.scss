@@ -1,7 +1,6 @@
 .dashBoard {
   width: 98%;
-  height: 95%;
-  //   border-radius: 10px;
+  height: 100%;
 
   background: rgb(255, 255, 255);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -10,14 +9,16 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 
   //For link dash board
   .linkPage {
     flex: 2;
     height: 100%;
-    // background: #5c5669;
+
     background: #403558;
+
+    // position: fixed;
+    // left: 10px;
 
     //Title
     .userDashBoardTitle {
@@ -33,12 +34,16 @@
     .iconDashBoard {
       font-size: 30px;
     }
+    .icons {
+      font-size: 30px;
+      padding-right: 5px;
+    }
   }
 
   //For content
   .contentPage {
     flex: 9;
-    height: 100%;
+    // height: fit-content !important;
 
     display: flex;
     justify-content: center;

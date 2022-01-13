@@ -23,20 +23,41 @@ const userApi = {
     const url = USER_API + "/join";
     return axiosClient.post(url, code);
   },
+  //get all courses joined
   get_myCourses: (class_info) => {
     const url = USER_API + STUDENT_API + "/my-courses";
     return axiosClient.get(url, {
       params: class_info,
     });
   },
+  //get course details
   get_myCoursesDetail: (code_course) => {
     const url = USER_API + STUDENT_API + `/course/${code_course}`;
     return axiosClient.get(url);
   },
+  //get scored in courses detail
+  get_MyScoredRecord: (info_update) => {
+    const url = USER_API + STUDENT_API + "/grade";
+    return axiosClient.get(url, { params: info_update });
+  },
+  get_MyScoreds: () => {
+    const url = USER_API + STUDENT_API + "/grades";
+    return axiosClient.get(url);
+  },
+  //get all asignments
+  get_MyAssignments: (params) => {
+    const url = USER_API + STUDENT_API + "/course/assignments";
+    return axiosClient.get(url, { params: params });
+  },
 
   //for teacher
+  //creacte,view class
   create_newClass: (className) => {
     const url = USER_API + TEACHER_API + "/create-class";
+    return axiosClient.post(url, className);
+  },
+  post_updateClass: (className) => {
+    const url = USER_API + TEACHER_API + "/class";
     return axiosClient.post(url, className);
   },
   get_myClass: (info_Class) => {
@@ -49,13 +70,70 @@ const userApi = {
     const url = USER_API + TEACHER_API + `/class/${code_class}`;
     return axiosClient.get(url);
   },
-  get_TeacherAssignments: (code_class) => {
-    const url = USER_API + TEACHER_API + `/assignments`;
-    return axiosClient.get(url, code_class);
-  },
+  //grade struct
   get_TeacherGrades: (code_class) => {
     const url = USER_API + TEACHER_API + `/grades`;
+    return axiosClient.get(url, {
+      params: code_class,
+    });
+  },
+  get_TeacherGradeStruct: (code_class) => {
+    const url = USER_API + TEACHER_API + `/grade-struct`;
     return axiosClient.get(url, code_class);
+  },
+  post_TeacherGradeStructAdd: (struct_info) => {
+    const url = USER_API + TEACHER_API + `/grade-struct`;
+    return axiosClient.post(url, struct_info);
+  },
+  post_TeacherGradeStructDelete: (code) => {
+    const url = USER_API + TEACHER_API + `/grade-struct/delete`;
+    return axiosClient.post(url, code);
+  },
+  post_TeacherGradeStructEdit: (struct_info) => {
+    const url = USER_API + TEACHER_API + `/grade-struct/update`;
+    return axiosClient.post(url, struct_info);
+  },
+  //assignments
+  get_TeacherAssignments: (code_class) => {
+    const url = USER_API + TEACHER_API + `/assignments`;
+    return axiosClient.get(url, {
+      params: code_class,
+    });
+  },
+  post_TeacherAssignmentsAdd: (assignment_info) => {
+    const url = USER_API + TEACHER_API + `/assignment`;
+    return axiosClient.post(url, assignment_info);
+  },
+  post_TeacherAssignmentsEdit: (assignment_info) => {
+    const url = USER_API + TEACHER_API + `/assignment/update`;
+    return axiosClient.post(url, assignment_info);
+  },
+  post_TeacherAssignmentsGradeScored: (assignment_info) => {
+    const url = USER_API + TEACHER_API + `/assignment/grade`;
+    return axiosClient.post(url, assignment_info);
+  },
+  //mark class
+  post_TeacherMarkClass: (class_code) => {
+    const url = USER_API + TEACHER_API + `/final-course`;
+    return axiosClient.post(url, class_code);
+  },
+
+  //review
+  get_AllReviews: (params) => {
+    const url = USER_API + `/reviews`;
+    return axiosClient.get(url, { params: params });
+  },
+  post_CreateReview: (info_review) => {
+    const url = USER_API + `/review`;
+    return axiosClient.post(url, info_review);
+  },
+  post_ReplyReview: (info_review) => {
+    const url = USER_API + `/review-rep`;
+    return axiosClient.post(url, info_review);
+  },
+  post_CompleteReview: (info_review) => {
+    const url = USER_API + `/review-complete`;
+    return axiosClient.post(url, info_review);
   },
 };
 

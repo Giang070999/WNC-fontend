@@ -33,7 +33,6 @@ function ModalUpdateInfo({ show, onShow }) {
   };
 
   const handleUpdate = async () => {
-    // console.log("upđate thông tin với", gender, birthday, fullName, phone);
     await updateInfo();
     onShow(!show);
   };
@@ -53,6 +52,9 @@ function ModalUpdateInfo({ show, onShow }) {
       });
     } catch (error) {
       console.log("lỗi rồi", { error });
+      toast.warning(`${error.response.data.message}`, {
+        position: "bottom-right",
+      });
     }
   };
 
@@ -76,7 +78,7 @@ function ModalUpdateInfo({ show, onShow }) {
             <Form.Label>Ngày sinh</Form.Label>
             <Form.Control
               value={birthday}
-              type="date"
+              type="datetime-local"
               name="birthday"
               onChange={(e) => setBirthday(e.target.value)}
             />
@@ -104,10 +106,10 @@ function ModalUpdateInfo({ show, onShow }) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" type="submit" onClick={handleUpdate}>
+        <Button variant="primary" type="submit" onClick={() => handleUpdate()}>
           Cập nhật thông tin
         </Button>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={() => handleClose()}>
           Đóng
         </Button>
       </Modal.Footer>

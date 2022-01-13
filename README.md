@@ -1,6 +1,6 @@
 # Grade Management System
 
-Xem demo tại: [Giao diện demo](https://demo-grade-management-system.herokuapp.com) - [link API](https://gradems.herokuapp.com/apis-doc/#/)
+Xem demo tại: [Giao diện demo](https://manage-grade-system.herokuapp.com) - [link API](https://gradems.herokuapp.com/apis-doc/#/)
 
 ## Miêu tả hệ thống
 
@@ -18,46 +18,54 @@ Xem demo tại: [Giao diện demo](https://demo-grade-management-system.herokuap
 
 ### `2.Routes:`
 
-**1. Trang chính:**
-/home
-/login
-**2. Trang học viên:**
+**1. Trang chính:**<br/>
+/home<br/>
 
-/student
+**2. Trang auth:**<br/>
+/login<br/>
+/register<br/>
+/forgot_password<br/>
+**3. Trang học viên:**<br/>
 
-- **Xem thông tin cá nhân**
-  /student/my_info
-  /student/my_info/update
-  /student/scored_record
+/student<br/>
 
-- **Xem lớp học đã tham gia**
-  /student/courses
-  /student/courses/invitation_enter
-  /student/courses/id
+- **Xem thông tin cá nhân**<br/>
+  /student/my_inf <br/>
+  /student/my_info/update<br/>
+  /student/scored_record<br/>
 
-**3. Trang giảng viên:**
+- **Xem lớp học đã tham gia**<br/>
+  /student/courses<br/>
+  /student/courses/invitation_enter<br/>
+  /student/courses/:id<br/>
+  /student/courses/:id/assignment<br/>
+  /student/courses/:id/details<br/>
+  /student/courses/:id/reviews<br/>
 
-/teacher
+**4. Trang giảng viên:**<br/>
 
-- **Xem thông tin cá nhân**
-  /teacher/my_info
-  /teacher/my_info/update
+/teacher<br/>
 
-- **Xem lớp học đang quản lý**
-  /teacher/courses
-  /teacher/courses/invatitation_create
-  /teacher/courses/id
+- **Xem thông tin cá nhân**<br/>
+  /teacher/my_info<br/>
+  /teacher/my_info/update<br/>
 
-**4. Trang admin:**
+- **Xem lớp học đang quản lý**<br/>
+  /teacher/courses<br/>
+  /teacher/courses/invatitation_create<br/>
+  /teacher/courses/:id<br/>
+  /teacher/courses/:id/assignment<br/>
+  /teacher/courses/:id/details<br/>
+  /teacher/courses/:id/reviews<br/>
 
-/admin
+**5. Trang admin:**<br/>
 
-- **Xem thông tin cá nhân**
-  /admin/my_info
-  /admin/my_info/update
+/admin<br/>
 
-- **Quản lý tài khoản**
-  /admin/accounts
+- **Quản lý tài khoản**<br/>
+  /admin/students<br/>
+  /admin/teachers<br/>
+  /admin/accounts<br/>
 
-- **Quản lý lớp học**A
-  /admin/courses
+- **Quản lý lớp học**<br/>
+  /admin/courses<br/>
