@@ -1,7 +1,5 @@
 # Grade Management System
 
-Xem demo tại: [Giao diện demo](https://manage-grade-system.herokuapp.com) - [link API](https://gradems.herokuapp.com/apis-doc/#/)
-
 ## Miêu tả hệ thống
 
 ### `1.Chức năng chính:`
